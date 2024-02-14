@@ -7,7 +7,7 @@ html {
 	background-size: 80vw;
 	background-color: #161223;
 	color: #fff;
-		margin:0;
+	margin:0;
 	padding:0;
 }
 
@@ -18,7 +18,8 @@ body {
 	line-height: 1.7em;
 	color: #c4c3ca;
 	overflow-x: hidden;
-		margin:0;
+	overflow-y: hidden;
+	margin:0;
 	padding:0;
 }
 #loader{
@@ -31,11 +32,11 @@ body {
 #loader img{
 	position:fixed;
 	left:50%;
-	width:200px;
-	height:200px;
-	margin-left:-100px;
+	width:600px;
+	height:600px;
+	margin-left:-300px;
 	top:50%;
-	margin-top:-100px;
+	margin-top:-300px;
 }
 #nav {
 	background: rgba(22, 18, 35, 0.9);

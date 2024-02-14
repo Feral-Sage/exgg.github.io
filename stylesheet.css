@@ -7,6 +7,8 @@ html {
 	background-size: 80vw;
 	background-color: #161223;
 	color: #fff;
+		margin:0;
+	padding:0;
 }
 
 body {
@@ -16,8 +18,25 @@ body {
 	line-height: 1.7em;
 	color: #c4c3ca;
 	overflow-x: hidden;
+		margin:0;
+	padding:0;
 }
-
+#loader{
+	position:fixed;
+	z-index:101;
+	width:100vw;
+	height:100vh;
+	background-color:#000;
+}
+#loader img{
+	position:fixed;
+	left:50%;
+	width:200px;
+	height:200px;
+	margin-left:-100px;
+	top:50%;
+	margin-top:-100px;
+}
 #nav {
 	background: rgba(22, 18, 35, 0.9);
 	z-index:100;

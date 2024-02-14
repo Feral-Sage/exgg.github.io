@@ -2,14 +2,25 @@
 <head>
    <link rel="stylesheet" href="stylesheet.css">
    <script>
-      function showMask() {
-          var node = document.getElementById('VIP');
-          if (node.style.visibility=='visible') {
-              node.style.visibility = 'hidden';
-          }
-          else
-              node.style.visibility = 'visible'
-      }
+   function slide(id) {
+  var slidingDiv = document.getElementById(id);
+  var stopPosition = 0;
+  var startPosition = -1 * parseInt(slidingDiv.style.left);
+  var direction = 1;
+  
+  if (parseInt(slidingDiv.style.left) > stopPosition) {
+    direction = -1;
+  }
+  
+  var slideIt = function() {
+    if ( (direction * parseInt(slidingDiv.style.left)) < (direction * startPosition) ) {
+      slidingDiv.style.left = parseInt(slidingDiv.style.left) + (direction * 20) + "px";
+      setTimeout(slideIt, 1);
+    }
+  }
+  
+  slideIt();
+}
          
    </script>
    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
@@ -30,7 +41,7 @@
    <div id="links">
       <a href="#faq" class="main"><img src="images/faq.png"/></a>
       <a href="#rules" class="main"><img src="images/rules.png"/></a>
-      <a href="#" class="main" onclick="showMask()"><img src="images/vip.png"/></a>
+      <a href="#" class="main" onclick="slide('links');"><img src="images/vip.png"/></a>
    </div>
    <div id="content">
       <p>

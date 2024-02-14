@@ -1,29 +1,8 @@
 <!DOCTYPE html>
 <head>
-   <link rel="stylesheet" href="stylesheet.css">
-   <script>
-   function slide(id) {
-  var slidingDiv = document.getElementById(id);
-  var stopPosition = 0;
-  var startPosition = -1 * parseInt(slidingDiv.style.left);
-  var direction = 1;
-  
-  if (parseInt(slidingDiv.style.left) > stopPosition) {
-    direction = -1;
-  }
-  
-  var slideIt = function() {
-    if ( (direction * parseInt(slidingDiv.style.left)) < (direction * startPosition) ) {
-      slidingDiv.style.left = parseInt(slidingDiv.style.left) + (direction * 20) + "px";
-      setTimeout(slideIt, 1);
-    }
-  }
-  
-  slideIt();
-}
-         
-   </script>
-   <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   
 </head>
 <body>
 	<div id="loader">
@@ -38,10 +17,48 @@
          <li><a href="#">GAMES</a></li>
       </ul>
    </div>
+   <div id="everything">
+   <div id="wrapper">
    <div id="links">
       <a href="#faq" class="main"><img src="images/faq.png"/></a>
       <a href="#rules" class="main"><img src="images/rules.png"/></a>
-      <a href="#" class="main" onclick="slide('links');"><img src="images/vip.png"/></a>
+      <a href="#" class="main" id="slideleft"><img src="images/vip.png"/></a>
+   </div>
+   <div id="donations">
+   <div id="donate-info"><p style="color:#fff; font-weight:bold;">WORK IN PROGRESS. INFO WILL GO HERE.</p></div>
+      <script src="https://www.paypal.com/sdk/js?client-id=AZmfbi3vvqBIlHVQ1t7Y5FdUXrvsLc06rgL80CQYk5yamNSZjPzP_dO0rjScehvfcgj8DNPTflRe3ef9"></script>
+      <div id="donate-button-container1">
+			<div id="donate-button"></div>
+			<script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+			<script>
+			PayPal.Donation.Button({
+			env:'production',
+			hosted_button_id:'LGMEK4ANBWJWC',
+			image: {
+			src:'images/button_vip.png',
+			alt:'Donate with PayPal button',
+			title:'PayPal - The safer, easier way to pay online!',
+			}
+			}).render('#donate-button');
+			</script>
+		</div>
+
+	  <div id="donate-button-container2">
+         <div id="donate-button2"></div>
+         <script>
+            PayPal.Donation.Button({
+            env:'production',
+            hosted_button_id:'QG8BNGHMFMQAL',
+            image: {
+            src:'images/button_donate.png',
+            alt:'Donate with PayPal button',
+            title:'PayPal - The safer, easier way to pay online!',
+            }
+            }).render('#donate-button2');
+         </script>
+      </div>
+   </div>
+   </div>
    </div>
    <div id="content">
       <p>
@@ -150,39 +167,69 @@
    </div>
    </div>
    <div id="VIP">
-	<div id="donate-info"></div>
-      <script src="https://www.paypal.com/sdk/js?client-id=AZmfbi3vvqBIlHVQ1t7Y5FdUXrvsLc06rgL80CQYk5yamNSZjPzP_dO0rjScehvfcgj8DNPTflRe3ef9"></script>
-      <div id="donate-button-container1">
-			<div id="donate-button"></div>
-			<script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-			<script>
-			PayPal.Donation.Button({
-			env:'production',
-			hosted_button_id:'LGMEK4ANBWJWC',
-			image: {
-			src:'images/button_vip.png',
-			alt:'Donate with PayPal button',
-			title:'PayPal - The safer, easier way to pay online!',
-			}
-			}).render('#donate-button');
-			</script>
-		</div>
-
-	  <div id="donate-button-container2">
-         <div id="donate-button2"></div>
-         <script>
-            PayPal.Donation.Button({
-            env:'production',
-            hosted_button_id:'QG8BNGHMFMQAL',
-            image: {
-            src:'images/button_donate.png',
-            alt:'Donate with PayPal button',
-            title:'PayPal - The safer, easier way to pay online!',
-            }
-            }).render('#donate-button2');
-         </script>
-      </div>
    </div>
+   <script>
+var TRACK = (function () {
+    var p = document.createElement('p');
+    document.body.appendChild(p);
+    return function (str) {
+        p.innerHTML = str;
+    }
+}());
+
+
+
+var fade_timer,
+    going_left = true,
+    container = document.getElementById('wrapper'),
+    one = document.getElementById('links'),
+    two = document.getElementById('donations'),
+    set_opacity = function (elem, o) {
+        elem.style.opacity = o;
+        elem.style.filter = 'alpha(opacity=' + o * 100 + ')';
+    },
+    swap = function (fade_in, fade_out, end_left) {
+        var start_time = +new Date(), total_time = 2000, end_time = start_time + total_time,
+            start_left = parseFloat(container.style.left) || 0, total_left = end_left - start_left,
+            in_start_o = parseFloat(fade_in.style.opacity) || 0, in_total_o = 1 - in_start_o,
+            out_start_o = parseFloat(fade_out.style.opacity) || 1, out_total_o = -out_start_o;
+        
+        fade_timer = setInterval(function () {
+            var percent = +new Date(),
+                current_time = percent > end_time ? 1 : (percent - start_time) / total_time;
+                percent = (1 - Math.cos(current_time * Math.PI)) / 2;
+            
+            set_opacity(fade_in, in_start_o + percent * in_total_o);
+            set_opacity(fade_out, out_start_o + percent * out_total_o);
+            container.style.left = (start_left + percent * total_left) + 'px';
+            
+            if (current_time === 1) {
+                clearInterval(fade_timer);
+            }
+        }, 40);
+    };
+
+document.getElementById('slideleft').onclick = function () {
+    clearInterval(fade_timer);
+    if (going_left) {
+        going_left = false;
+        swap(two, one, -2000);
+    } else {
+        going_left = true;
+        swap(one, two, 0);
+    }
+	};
+document.getElementById('donations').onclick = function () {
+    clearInterval(fade_timer);
+    if (going_left) {
+        going_left = false;
+        swap(two, one, -2000);
+    } else {
+        going_left = true;
+        swap(one, two, 0);
+    }
+};
+   </script>
 	<script>
 		window.onload = function() {
 			setTimeout(function() {

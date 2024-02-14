@@ -214,3 +214,30 @@ body {
 	width: 29vw;
 	height: 50vh;
 }
+#footer{
+	position:relative;
+	display:flex;
+	flex-direction: row;
+	margin-top:10vh;
+	width:100%;
+}
+#footer .copy{
+	width:60%;
+	font-weight: bold;
+	font-size: 2vh;
+}
+#footer .refer{
+	width:40%;
+	text-align:right;
+}
+#footer a{
+	display:inline-block;
+	line-height:10vh;
+}
+#footer a img{
+	height:4vh;
+	transition: transform .5s;
+}
+#footer a img:hover{
+	transform: scale(1.5);
+}

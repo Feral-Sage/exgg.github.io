@@ -1,235 +1,248 @@
 <!DOCTYPE html>
 <head>
-   <link rel="stylesheet" type="text/css" href="stylesheet.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-   
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 	<div id="loader">
 		<img src="images/Egg-without-bg.gif"/>
 	</div>
-   <div id="nav">
-      <ul class="left">
-         <li><a href="index.html"><img src="images/Egg.png" alt="Logo"></a></li>
-      </ul>
-      <ul class="right">
-         <li><a href="https://discord.gg/eggies">DISCORD</a></li>
-         <li><a href="#">GAMES</a></li>
-      </ul>
-   </div>
-   <div id="everything">
-   <div id="wrapper">
-   <div id="links">
-      <a href="#faq" class="main"><img src="images/faq.png"/></a>
-      <a href="#rules" class="main"><img src="images/rules.png"/></a>
-      <a href="#" class="main" id="slideleft"><img src="images/vip.png"/></a>
-   </div>
-   <div id="donations">
-   <div id="donate-info"><p style="color:#fff; font-weight:bold;">WORK IN PROGRESS. INFO WILL GO HERE.</p></div>
-      <script src="https://www.paypal.com/sdk/js?client-id=AZmfbi3vvqBIlHVQ1t7Y5FdUXrvsLc06rgL80CQYk5yamNSZjPzP_dO0rjScehvfcgj8DNPTflRe3ef9"></script>
-      <div id="donate-button-container1">
-			<div id="donate-button"></div>
-			<script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-			<script>
-			PayPal.Donation.Button({
-			env:'production',
-			hosted_button_id:'LGMEK4ANBWJWC',
-			image: {
-			src:'images/button_vip.png',
-			alt:'Donate with PayPal button',
-			title:'PayPal - The safer, easier way to pay online!',
-			}
-			}).render('#donate-button');
-			</script>
+	<div id="nav">
+		<ul class="left">
+			<li><a href="index.html"><img src="images/Egg.png" alt="Logo"></a></li>
+		</ul>
+		<ul class="right">
+			<li><a href="https://discord.gg/eggies">DISCORD</a></li>
+			<li><a href="#">GAMES</a></li>
+		</ul>
+	</div>
+	<div id="everything">
+		<div id="wrapper">
+			<div id="links">
+				<a href="#faq" class="main"><img src="images/faq.png"/></a>
+				<a href="#rules" class="main"><img src="images/rules.png"/></a>
+				<a href="#" class="main" id="slideleft"><img src="images/vip.png"/></a>
+			</div>
+			<div id="donations">
+				<script src="https://www.paypal.com/sdk/js?client-id=AZmfbi3vvqBIlHVQ1t7Y5FdUXrvsLc06rgL80CQYk5yamNSZjPzP_dO0rjScehvfcgj8DNPTflRe3ef9"></script>
+				<div id="donate-button-container1">
+					<div id="donate-button"></div>
+					<script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+					<script>
+						PayPal.Donation.Button({
+						env:'production',
+						hosted_button_id:'LGMEK4ANBWJWC',
+						image: {
+						src:'images/button_vip.png',
+						alt:'Donate with PayPal button',
+						title:'PayPal - The safer, easier way to pay online!',
+						}
+						}).render('#donate-button');
+					</script>
+				</div>
+				<div id="donate-info">
+					<span>
+						<p>
+							We appreciate you considering to help keep running costs covered.
+							</br></br>
+							If you would like to gain the ability to skip the RUST queue, please select VIP.
+							</br></br>
+							If you would like to lend us a few bucks out of the kindness of your own heart, please select DONATE.
+							</br></br>
+							<a href="#">Close</a>
+						</p>
+					</span>
+				</div>
+				<div id="donate-button-container2">
+					<div id="donate-button2"></div>
+					<script>
+						PayPal.Donation.Button({
+						env:'production',
+						hosted_button_id:'QG8BNGHMFMQAL',
+						image: {
+						src:'images/button_donate.png',
+						alt:'Donate with PayPal button',
+						title:'PayPal - The safer, easier way to pay online!',
+						}
+						}).render('#donate-button2');
+					</script>
+				</div>
+			</div>
 		</div>
-
-	  <div id="donate-button-container2">
-         <div id="donate-button2"></div>
-         <script>
-            PayPal.Donation.Button({
-            env:'production',
-            hosted_button_id:'QG8BNGHMFMQAL',
-            image: {
-            src:'images/button_donate.png',
-            alt:'Donate with PayPal button',
-            title:'PayPal - The safer, easier way to pay online!',
-            }
-            }).render('#donate-button2');
-         </script>
-      </div>
-   </div>
-   </div>
-   </div>
-   <div id="content">
-      <p>
-         <b>Solo/Duo PVP 2X E.G.G</b>
-         <br/>
-         Be aware Mods will be very active on this server! Follow our rules.
-         <br/>			
-         Please open a ticket to report issues. Do not disclose the identities of individuals who are not following the rules in the chat as that might make the individual stop what they are doing, making it difficult to catch rule breakers in the act.
-         <br/>
-         Thank you.
-         <br/>
-      </p>
-      </br>
-      </br>
-      </br>
-      <div id="faq">
-         <img src="images/faq.png" align="left"/>
-         <h1 align="right">FAQ</h1>
-
-		 <b>– VIP (queue skip)</b>
-         <br/>
-         Thank you for considering to fund our server, covering costs would be nice. The purpose is that funds will solely be used to cover expenses or reinvest in the community. 
-         <br/>
-		 <br/>
-         <hr/>
-         <br/>
-		 <b>– Pee Pee 9000</b>
-         <br/>
-         Pee Pee 9000 is an in-game mechanism that will kill you while sleeping once we have over 100 sleepers. Since we are a high-population server with a queue, please remember to remove your kits before logging off.
-         <br/>
-		 <br/>
-		 <hr/>
-         <br/>
-		 <b>- Bi-weekly and Monthly requests</b>
-		 <br/>
-         Since the launch of community servers, we have had a weekly wipe due to some lag issues within the tail end of the weekly wipe cycle. During beta stages on the Public Testing Branch we held the record of holding an 8 day streak without being forced to wipe. 
-         To claim that we will conduct a wipe every two weeks would be untrue due to previous testing. Servers (not 100% vanilla) with a 14-day or monthly wipe schedule, especially those with a high population have a very high possibility of lag or possibly further issues.
-         Perhaps we'll attempt it again in the very near future. However, at the moment, we do not have a plan for bi-weekly or monthly. 
-         <br/>
-		 <br/>
-		 <hr/>
-         <br/>
-		 <b>– Sulfur/Boom</b>
-         <br/>
-		 Being a 2X server with doubled item rates, it often led to crates containing twice the usual boom. Excessive boom and faster gathering rates of sulfur had created a problem.  While this might sound appealing, it made raiding far too easy within a few hours after wipe. To address this, we have slowed down the raiding process for a more manageable and enjoyable experience for all players. Timed charges, satchels, and other explosives have been set back to normal levels. Similarly for sulfur ore, which is now collected at a vanilla rate. This was voted on by our community. The Discord was full of people complaining about being raided too quickly and excessively before the change. We have seen success with this experience.
-         <br/>
-		 <br/>
-		 <hr/>
-         <br/>
-		 <b>– Starts</b>
-         <br/>
-		 We do not provide starts to players. We do not spawn in any items for players and try to not affect gameplay for players. Please do not message staff for starts. Players within the discord can provide starts at their own will. Do not harass anyone because you do not want to work for items in the game. 
-         <br/>
-		 <br/>
-		 <hr/>
-         <br/>
-		 <b>– Offlining</b>
-         <br/>
-		 Offling is allowed on this server. Base griefing or TC griefing is NOT allowed. If you raid a base, congratulations, you won. Allow base owners to restart. Release the base unless it's affecting your own build. You can place TC temporarily to move loot but when you are done please release it back to the owner.
-		 <br/>
-		 <br/>
-	  </div>
-      <div id="rules">
-         <img src="images/rules.png" align="right"/>
-         <p>
-            <b><h1>Rules</h1></b>
-            <br/>
-            - You must be 16+ years of age
-            <br/>
-            - No hacking/scripting. No Usage of 3rd party devices. No intentional bug abuse.
-            <br/>
-            - We will not tolerate gamertags that imply cheating. Nothing including Xim/Zen. We do not want drama or trolls of such nature here.
-            <br/>
-            - No racism, sexism, or homophobia in chats.
-            <br/>
-            - No base griefing. No TC griefing. If you raid a base, congratulations, you won. Allow base owners to restart. Release the base unless it's affecting your own build.Clear Auths on TC as well, remove any locks added during this time.
-            <br/>
-            - This is a Solo/Duo server. No group roaming. If you roam in groups of over two, you will be banned.If you're over two in a base(or code-lock) you will be banned.
-            <br/>
-            - If you're trading or talking with other players and come under attack, you must move out and allow the fight to happen. No group defense is allowed, meaning no teaming up between groups.
-            <br/>
-            - Mods will NOT spawn in items due to glitches or other issues.
-            <br/>
-            - Mods will NOT help players by using teleport due to glitches or other. 
-            <br/>
-            - Mods will NOT affect game play outside of enforcing rules. 
-            <br/>
-            - Mods will NOT spawn in any items outside of tests.
-            <br/>
-            - Mods will NOT abuse their powers or play games with players.
-            <br/>
-            - No selling (real money) of in-game loot. Attempting to buy items(or bribe) from staff will result in an automatic one-week ban.
-            <br/>
-            - Soft Rule/Cap for Auto Turrets. 14 Turrets allowed per base within the build radius this includes compounds if you have 2 bases in a compound its considered 1 Entity (large base).
-            <br/>
-            - Report team changes to mods via the tickets system.
-         </p>
-      </div>
-	  <div id="footer">
-	<div class="copy">
-		<p>&copy Experienced Gamers Guild <script type="text/javascript">var year = new Date();document.write(year.getFullYear());</script></p>
 	</div>
-	<div class="refer">
-		<a href="https://discord.gg/eggies"><img src="images/dc.png"/></a>
+	<div id="content">
+		<p>
+			<b>Solo/Duo PVP 2X E.G.G</b>
+			<br/>
+			Be aware Mods will be very active on this server! Follow our rules.
+			<br/>			
+			Please open a ticket to report issues. Do not disclose the identities of individuals who are not following the rules in the chat as that might make the individual stop what they are doing, making it difficult to catch rule breakers in the act.
+			<br/>
+			Thank you.
+			<br/>
+		</p>
+		</br>
+		</br>
+		</br>
+		<div id="faq">
+			<img src="images/faq.png" align="left"/>
+			<h1 align="right">FAQ</h1>
+			<b>– VIP (queue skip)</b>
+			<br/>
+			Thank you for considering to fund our server, covering costs would be nice. The purpose is that funds will solely be used to cover expenses or reinvest in the community. 
+			<br/>
+			<br/>
+			<hr/>
+			<br/>
+			<b>– Pee Pee 9000</b>
+			<br/>
+			Pee Pee 9000 is an in-game mechanism that will kill you while sleeping once we have over 100 sleepers. Since we are a high-population server with a queue, please remember to remove your kits before logging off.
+			<br/>
+			<br/>
+			<hr/>
+			<br/>
+			<b>- Bi-weekly and Monthly requests</b>
+			<br/>
+			Since the launch of community servers, we have had a weekly wipe due to some lag issues within the tail end of the weekly wipe cycle. During beta stages on the Public Testing Branch we held the record of holding an 8 day streak without being forced to wipe. 
+			To claim that we will conduct a wipe every two weeks would be untrue due to previous testing. Servers (not 100% vanilla) with a 14-day or monthly wipe schedule, especially those with a high population have a very high possibility of lag or possibly further issues.
+			Perhaps we'll attempt it again in the very near future. However, at the moment, we do not have a plan for bi-weekly or monthly. 
+			<br/>
+			<br/>
+			<hr/>
+			<br/>
+			<b>– Sulfur/Boom</b>
+			<br/>
+			Being a 2X server with doubled item rates, it often led to crates containing twice the usual boom. Excessive boom and faster gathering rates of sulfur had created a problem.  While this might sound appealing, it made raiding far too easy within a few hours after wipe. To address this, we have slowed down the raiding process for a more manageable and enjoyable experience for all players. Timed charges, satchels, and other explosives have been set back to normal levels. Similarly for sulfur ore, which is now collected at a vanilla rate. This was voted on by our community. The Discord was full of people complaining about being raided too quickly and excessively before the change. We have seen success with this experience.
+			<br/>
+			<br/>
+			<hr/>
+			<br/>
+			<b>– Starts</b>
+			<br/>
+			We do not provide starts to players. We do not spawn in any items for players and try to not affect gameplay for players. Please do not message staff for starts. Players within the discord can provide starts at their own will. Do not harass anyone because you do not want to work for items in the game. 
+			<br/>
+			<br/>
+			<hr/>
+			<br/>
+			<b>– Offlining</b>
+			<br/>
+			Offling is allowed on this server. Base griefing or TC griefing is NOT allowed. If you raid a base, congratulations, you won. Allow base owners to restart. Release the base unless it's affecting your own build. You can place TC temporarily to move loot but when you are done please release it back to the owner.
+			<br/>
+			<br/>
+		</div>
+		<div id="rules">
+			<img src="images/rules.png" align="right"/>
+			<p>
+				<b>
+			<h1>Rules</h1></b>
+			<br/>
+			- You must be 16+ years of age
+			<br/>
+			- No hacking/scripting. No Usage of 3rd party devices. No intentional bug abuse.
+			<br/>
+			- We will not tolerate gamertags that imply cheating. Nothing including Xim/Zen. We do not want drama or trolls of such nature here.
+			<br/>
+			- No racism, sexism, or homophobia in chats.
+			<br/>
+			- No base griefing. No TC griefing. If you raid a base, congratulations, you won. Allow base owners to restart. Release the base unless it's affecting your own build.Clear Auths on TC as well, remove any locks added during this time.
+			<br/>
+			- This is a Solo/Duo server. No group roaming. If you roam in groups of over two, you will be banned.If you're over two in a base(or code-lock) you will be banned.
+			<br/>
+			- If you're trading or talking with other players and come under attack, you must move out and allow the fight to happen. No group defense is allowed, meaning no teaming up between groups.
+			<br/>
+			- Mods will NOT spawn in items due to glitches or other issues.
+			<br/>
+			- Mods will NOT help players by using teleport due to glitches or other. 
+			<br/>
+			- Mods will NOT affect game play outside of enforcing rules. 
+			<br/>
+			- Mods will NOT spawn in any items outside of tests.
+			<br/>
+			- Mods will NOT abuse their powers or play games with players.
+			<br/>
+			- No selling (real money) of in-game loot. Attempting to buy items(or bribe) from staff will result in an automatic one-week ban.
+			<br/>
+			- Soft Rule/Cap for Auto Turrets. 14 Turrets allowed per base within the build radius this includes compounds if you have 2 bases in a compound its considered 1 Entity (large base).
+			<br/>
+			- Report team changes to mods via the tickets system.
+			</p>
+		</div>
+		<div id="footer">
+			<div class="copy">
+				<p>
+					&copy Experienced Gamers Guild <script type="text/javascript">var year = new Date();document.write(year.getFullYear());</script>
+				</p>
+			</div>
+			<div class="refer">
+				<a href="https://discord.gg/eggies"><img src="images/dc.png"/></a>
+			</div>
+		</div>
 	</div>
-   </div>
-   </div>
-   <div id="VIP">
-   </div>
-   <script>
-var TRACK = (function () {
-    var p = document.createElement('p');
-    document.body.appendChild(p);
-    return function (str) {
-        p.innerHTML = str;
-    }
-}());
-
-
-
-var fade_timer,
-    going_left = true,
-    container = document.getElementById('wrapper'),
-    one = document.getElementById('links'),
-    two = document.getElementById('donations'),
-    set_opacity = function (elem, o) {
-        elem.style.opacity = o;
-        elem.style.filter = 'alpha(opacity=' + o * 100 + ')';
-    },
-    swap = function (fade_in, fade_out, end_left) {
-        var start_time = +new Date(), total_time = 2000, end_time = start_time + total_time,
-            start_left = parseFloat(container.style.left) || 0, total_left = end_left - start_left,
-            in_start_o = parseFloat(fade_in.style.opacity) || 0, in_total_o = 1 - in_start_o,
-            out_start_o = parseFloat(fade_out.style.opacity) || 1, out_total_o = -out_start_o;
-        
-        fade_timer = setInterval(function () {
-            var percent = +new Date(),
-                current_time = percent > end_time ? 1 : (percent - start_time) / total_time;
-                percent = (1 - Math.cos(current_time * Math.PI)) / 2;
-            
-            set_opacity(fade_in, in_start_o + percent * in_total_o);
-            set_opacity(fade_out, out_start_o + percent * out_total_o);
-            container.style.left = (start_left + percent * total_left) + 'px';
-            
-            if (current_time === 1) {
-                clearInterval(fade_timer);
-            }
-        }, 40);
-    };
-
-document.getElementById('slideleft').onclick = function () {
-    clearInterval(fade_timer);
-    if (going_left) {
-        going_left = false;
-        swap(two, one, -2000);
-    } else {
-        going_left = true;
-        swap(one, two, 0);
-    }
-	};
-document.getElementById('donations').onclick = function () {
-    clearInterval(fade_timer);
-    if (going_left) {
-        going_left = false;
-        swap(two, one, -2000);
-    } else {
-        going_left = true;
-        swap(one, two, 0);
-    }
-};
-   </script>
+	<div id="VIP">
+	</div>
+	<script>
+		var TRACK = (function () {
+		    var p = document.createElement('p');
+		    document.body.appendChild(p);
+		    return function (str) {
+		        p.innerHTML = str;
+		    }
+		}());
+		
+		
+		
+		var fade_timer,
+		    going_left = true,
+		    container = document.getElementById('wrapper'),
+		    one = document.getElementById('links'),
+		    two = document.getElementById('donations'),
+		    set_opacity = function (elem, o) {
+		        elem.style.opacity = o;
+		        elem.style.filter = 'alpha(opacity=' + o * 100 + ')';
+		    },
+		    swap = function (fade_in, fade_out, end_left) {
+		        var start_time = +new Date(), total_time = 2000, end_time = start_time + total_time,
+		            start_left = parseFloat(container.style.left) || 0, total_left = end_left - start_left,
+		            in_start_o = parseFloat(fade_in.style.opacity) || 0, in_total_o = 1 - in_start_o,
+		            out_start_o = parseFloat(fade_out.style.opacity) || 1, out_total_o = -out_start_o;
+		        
+		        fade_timer = setInterval(function () {
+		            var percent = +new Date(),
+		                current_time = percent > end_time ? 1 : (percent - start_time) / total_time;
+		                percent = (1 - Math.cos(current_time * Math.PI)) / 2;
+		            
+		            set_opacity(fade_in, in_start_o + percent * in_total_o);
+		            set_opacity(fade_out, out_start_o + percent * out_total_o);
+		            container.style.left = (start_left + percent * total_left) + 'px';
+		            
+		            if (current_time === 1) {
+		                clearInterval(fade_timer);
+		            }
+		        }, 40);
+		    };
+		
+		document.getElementById('slideleft').onclick = function () {
+		    clearInterval(fade_timer);
+		    if (going_left) {
+		        going_left = false;
+		        swap(two, one, -4000);
+		    } else {
+		        going_left = true;
+		        swap(one, two, 0);
+		    }
+		};
+		document.getElementById('donations').onclick = function () {
+		    clearInterval(fade_timer);
+		    if (going_left) {
+		        going_left = false;
+		        swap(two, one, -4000);
+		    } else {
+		        going_left = true;
+		        swap(one, two, 0);
+		    }
+		};
+		   
+	</script>
 	<script>
 		window.onload = function() {
 			setTimeout(function() {

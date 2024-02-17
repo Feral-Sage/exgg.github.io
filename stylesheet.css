@@ -239,7 +239,6 @@ body::-webkit-scrollbar-thumb {
 	display: inline-block;
 	vertical-align: middle;
 	line-height: 18px;
-	/* <-- adjust this */
 }
 
 #donate-button-container1 {
@@ -319,4 +318,92 @@ body::-webkit-scrollbar-thumb {
 
 #footer a img:hover {
 	transform: scale(1.5);
+}
+
+@media only screen and (max-width: 600px) {
+
+	#content {
+		margin-left: -40vw;
+		width: 80vw;
+	}
+	#footer .copy {
+		font-size: 1.5vh;
+	}
+	#faq img {
+		width: 25vw;
+	}
+
+	#rules img {
+		width: 25vw;
+	}
+	#links {
+		position: relative;
+		display: flex;
+	}
+
+	#links a.main {
+		width: 33vw;
+	}
+
+	#links a.main img {
+		width: 22.5vw;
+	}
+	#everything {
+		margin-left: -40vw;
+		width: 80vw;
+	}
+	#donate-info {
+		position: absolute;
+		width: 94%;
+		height: 50%;
+		bottom:0;
+		font-size: 2.5vw;
+		line-height: 10em;
+	}
+
+	#donate-button-container1 {
+		position: absolute;
+		left: 0px;
+		width: 50%;
+		height: 50%;
+		line-height: 11em;
+	}
+
+	#donate-button-container1 img {
+		width: 80%;
+	}
+
+	#donate-button-container1 img:hover {
+		transform: scale(1.2);
+	}
+
+	#donate-button-container2 {
+		position: absolute;
+		right:0;
+		width: 50%;
+		height: 50%;
+		line-height: 11em;
+	}
+
+	#donate-button-container2 img {	
+		width: 80%;
+	}
+
+	#donate-button-container2 img:hover {
+		transform: scale(1.2);
+	}
+	#nav ul.left {
+		width: 20vw;
+		left: 10vw;
+	}
+
+	#nav ul.right {
+		text-align: right;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		width: 70vw;
+		position: relative;
+		right: 0px;
+	}
 }

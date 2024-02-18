@@ -219,27 +219,25 @@ body::-webkit-scrollbar-thumb {
 	width: 29%;
 	height: 100%;
 	background-color: #161223;
-	padding: 15px;
+	padding: 15px 20px 15px 20px;
 	color: #fff;
 	font-weight: bold;
-	font-size: 1vw;
+	font-size: 2vh;
 	text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 	text-align: center;
-	line-height: 25em;
+	line-height: 3vh;
 }
-
+#donate-info a{
+	width:10vw;
+	height:auto;
+	background-color:#c43143;
+	color: #fff;
+	padding:10px 15px 10px 15px;
+	text-decoration:none;
+	border-radius:5px;
+}
 #donate-info a:visited {
 	color: #fff;
-}
-
-#close {
-	z-index: 100;
-}
-
-#donate-info span {
-	display: inline-block;
-	vertical-align: middle;
-	line-height: 18px;
 }
 
 #donate-button-container1 {
@@ -355,14 +353,12 @@ body::-webkit-scrollbar-thumb {
 	}
 	#donate-info {
 		position: absolute;
-		width: 94%;
+		width: 100%;
+		margin-left: -20px;
 		height: 50%;
-		bottom:0;
-		font-size: 2.5vw;
-		line-height: 10em;
-	}
-	#donate-info span {
-		line-height: 22px;
+		bottom: 0;
+		font-size: 1.8vh;
+		line-height: 2vh;
 	}
 	#donate-button-container1 {
 		position: absolute;

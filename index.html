@@ -240,10 +240,8 @@
 		    document.body.appendChild(p);
 		    return function (str) {
 		        p.innerHTML = str;
-		    }
+		    };
 		}());
-		
-		
 		
 		var fade_timer,
 		    going_left = true,
@@ -252,31 +250,43 @@
 		    two = document.getElementById('donations'),
 		    set_opacity = function (elem, o) {
 		        elem.style.opacity = o;
-		        elem.style.filter = 'alpha(opacity=' + o * 100 + ')';
+		        elem.style.filter = 'alpha(opacity=' + o * 100 + ')'; // For older IE support
 		    },
 		    swap = function (fade_in, fade_out, end_left) {
-		        var start_time = +new Date(), total_time = 2000, end_time = start_time + total_time,
-		            start_left = parseFloat(container.style.left) || 0, total_left = end_left - start_left,
-		            in_start_o = parseFloat(fade_in.style.opacity) || 0, in_total_o = 1 - in_start_o,
-		            out_start_o = parseFloat(fade_out.style.opacity) || 1, out_total_o = -out_start_o;
-		        
-		        fade_timer = setInterval(function () {
-		            var percent = +new Date(),
-		                current_time = percent > end_time ? 1 : (percent - start_time) / total_time;
-		                percent = (1 - Math.cos(current_time * Math.PI)) / 2;
-		            
+		        clearInterval(fade_timer); // Clear any existing timer
+		
+		        var start_time = performance.now(); // More accurate timing
+		        var total_time = 1000; // Reduced for smoother, faster transition. Adjust as needed.
+		        var end_time = start_time + total_time;
+		        var start_left = parseFloat(container.style.left) || 0;
+		        var total_left = end_left - start_left;
+		
+		        var in_start_o = parseFloat(fade_in.style.opacity) || 0;
+		        var in_total_o = 1 - in_start_o;
+		        var out_start_o = parseFloat(fade_out.style.opacity) || 1;
+		        var out_total_o = -out_start_o;
+		
+		        fade_timer = requestAnimationFrame(function animate() { // Use requestAnimationFrame
+		            var current_time = performance.now();
+		            var progress = current_time > end_time ? 1 : (current_time - start_time) / total_time;
+		            var percent = (1 - Math.cos(progress * Math.PI)) / 2;
+		
 		            set_opacity(fade_in, in_start_o + percent * in_total_o);
 		            set_opacity(fade_out, out_start_o + percent * out_total_o);
 		            container.style.left = (start_left + percent * total_left) + 'px';
-		            
-		            if (current_time === 1) {
-		                clearInterval(fade_timer);
+		
+		            if (progress < 1) {
+		                requestAnimationFrame(animate); // Call animate again
+		            } else {
+		                fade_in.style.opacity = 1; // Ensure final values are set
+		                fade_out.style.opacity = 0;
+		                container.style.left = end_left + 'px';
 		            }
-		        }, 40);
+		        });
 		    };
 		
-		document.getElementById('slideleft').onclick = function () {
-		    clearInterval(fade_timer);
+		// Combined event handlers for cleaner code
+		var slideLeft = function() {
 		    if (going_left) {
 		        going_left = false;
 		        swap(two, one, -4000);
@@ -285,35 +295,25 @@
 		        swap(one, two, 0);
 		    }
 		};
-		document.getElementById('linkDon').onclick = function () {
-		    clearInterval(fade_timer);
-		    if (going_left) {
-		        going_left = false;
-		        swap(two, one, -4000);
+		
+		document.getElementById('slideleft').onclick = slideLeft;
+		document.getElementById('linkDon').onclick = slideLeft;
+		document.getElementById('donations').onclick = slideLeft;
+		
+		
+		
+		// Loader improvements
+		window.addEventListener('load', function() { // Use load event for better timing
+		    var loader = document.getElementById("loader");
+		    if (loader) { // Check if loader exists
+		        setTimeout(function() {
+		            loader.style.display = "none";
+		            document.body.style.overflowY = "auto"; // Use 'auto' instead of 'scroll' unless you specifically need a scrollbar always.
+		        }, 1000); // reduced delay slightly
 		    } else {
-		        going_left = true;
-		        swap(one, two, 0);
+		      document.body.style.overflowY = "auto"; // in case no loader element is present
 		    }
-		};
-		document.getElementById('donations').onclick = function () {
-		    clearInterval(fade_timer);
-		    if (going_left) {
-		        going_left = false;
-		        swap(two, one, -4000);
-		    } else {
-		        going_left = true;
-		        swap(one, two, 0);
-		    }
-		};
-		   
-	</script>
-	<script>
-		window.onload = function() {
-			setTimeout(function() {
-				document.getElementById("loader").style.display = "none";
-				document.getElementsByTagName("body")[0].style.overflowY = "scroll";
-			}, 2500);
-		}
+		});
 	</script>
 </body>
 </html>
